@@ -1,0 +1,45 @@
+# Contains the already aggregated data calculated from the raw data.
+
+Aggregates by different categories:
+- aggregate_(downloads_)journal.txt
+- aggregate_(downloads_)publisher.txt
+- aggregate_(downloads_)publication_date.txt
+
+All 6 files contain two columns, separated by tab:
+1. categorial variable (publication year/journal/publisher)
+2. count
+
+--------------------------------------------
+
+Merged aggregates
+- aggregate_merged_publisher.txt
+- aggregate_merged_published_date.txt
+
+Both contain the count data for publisher/publication year merged into one,
+3 columns, separated by tab:
+
+1. categorial variable (publication year/publisher)
+2. count
+3. categorial variable ("Corpus" or "Downloaded")
+
+--------------------------------------------
+
+Results of the binomial test:
+
+- aggregate_finished_binomial.csv contains the results for all publishers, regardless of significance
+- overrepresented_publishers.csv contains only FDR corrected p<0.05 with publisher's contribution in % in downloads > publishers contribution in % in corpus
+- underrepresented_publishers.csv contains only FDR corrected p<0.05 with publisher's contribution in % in downloads < publishers contribution in % in corpus
+
+All 3 files are tab-separated and have 11 columns named as follows (first row is the header):
+1. publisher -> which publisher is the data from
+2. count_corpus	-> what's the publisher's count in the corpus
+3. count_downloaded	-> what's the publisher's count in the corpus
+4. percent_corpus	-> what's the publisher's contribution to the corpus in percent
+5. percent_downloaded	-> what's the publisher's contribution to the downloads in percent
+6. total_corpus	-> what's the total number of papers in the complete corpus
+7. total_downloaded	-> what's the total number of downloaded papers in the data set
+8. pvalues.binom -> uncorrected p-value of the bionomial test
+9. pvalues.binom.fdr -> FDR corrected p-value of the binomial test
+---
+10. category -> whops, this one should not be there any longer :p
+11. foobar -> whops, this one should not be there any longer :p
