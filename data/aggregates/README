@@ -30,7 +30,8 @@ Results of the binomial test:
 - overrepresented_publishers.csv contains only FDR corrected p<0.05 with publisher's contribution in % in downloads > publishers contribution in % in corpus
 - underrepresented_publishers.csv contains only FDR corrected p<0.05 with publisher's contribution in % in downloads < publishers contribution in % in corpus
 
-All 3 files are tab-separated and have 11 columns named as follows (first row is the header):
+All 3 files are tab-separated and have 10 columns named as follows (first row is the header).
+All files share the same 9 first columns:
 1. publisher -> which publisher is the data from
 2. count_corpus	-> what's the publisher's count in the corpus
 3. count_downloaded	-> what's the publisher's count in the corpus
@@ -40,6 +41,9 @@ All 3 files are tab-separated and have 11 columns named as follows (first row is
 7. total_downloaded	-> what's the total number of downloaded papers in the data set
 8. pvalues.binom -> uncorrected p-value of the bionomial test
 9. pvalues.binom.fdr -> FDR corrected p-value of the binomial test
----
-10. category -> whops, this one should not be there any longer :p
-11. foobar -> whops, this one should not be there any longer :p
+
+For the aggregate_finished_binomial.csv:
+10. category -> is it one of the top publishers or "other"
+
+For the other two files:
+10. different_percentage -> percent_download divided by percent_corpus
